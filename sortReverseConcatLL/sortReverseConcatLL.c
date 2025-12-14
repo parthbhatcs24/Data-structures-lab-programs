@@ -7,11 +7,9 @@ typedef struct Node
     struct Node *next;
 } Node;
 
-// Global heads
 Node *head1 = NULL;
 Node *head2 = NULL;
 
-// Create a new node
 Node *createNode(int value)
 {
     Node *newNode = (Node *)malloc(sizeof(Node));
@@ -20,7 +18,6 @@ Node *createNode(int value)
     return newNode;
 }
 
-// Insert at end (pass by value)
 Node *insertEnd(Node *head, int value)
 {
     Node *newNode = createNode(value);
@@ -36,7 +33,6 @@ Node *insertEnd(Node *head, int value)
     return head;
 }
 
-// Display list (pass by value)
 void display(Node *head)
 {
     if (head == NULL)
@@ -54,7 +50,6 @@ void display(Node *head)
     printf("NULL\n");
 }
 
-// Sort linked list (pass by value)
 Node *sortList(Node *head)
 {
     if (head == NULL)
@@ -79,7 +74,6 @@ Node *sortList(Node *head)
     return head;
 }
 
-// Reverse linked list (pass by value)
 Node *reverseList(Node *head)
 {
     Node *prev = NULL, *curr = head, *next = NULL;
@@ -92,10 +86,9 @@ Node *reverseList(Node *head)
         curr = next;
     }
 
-    return prev; // new head
+    return prev; 
 }
 
-// Concatenate two lists (pass by value)
 Node *concatenate(Node *h1, Node *h2)
 {
     if (h1 == NULL)
@@ -111,7 +104,6 @@ Node *concatenate(Node *h1, Node *h2)
     return h1;
 }
 
-// MAIN
 int main()
 {
     int choice, value;
@@ -176,4 +168,5 @@ int main()
     }
 
     return 0;
+
 }
